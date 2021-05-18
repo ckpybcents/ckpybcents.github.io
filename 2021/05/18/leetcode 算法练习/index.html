@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">comment | Otaku</title>
+  <title itemprop="name">leetcode 算法练习 | Otaku</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -327,37 +327,169 @@
   </div>
 </header>
 
-        <div class="pattern-center-blank"></div>
-  
-    <div class="pattern-center ">
-      <div class="pattern-attachment-img">
-        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.4/img/banner/comment.jpg" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
-      </div>
-      <header class="pattern-header ">
-        <h1 class="entry-title">
-        留言板</h1>
-      </header>
-    </div>
-  
-  <div id="content" class="site-content">
-    <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
-      
-<div class="entry-content">
-  <div class="poem-wrap">
-    <div class="poem-border poem-left">
-    </div>
-    <div class="poem-border poem-right">
-    </div>
-    <h1>
-    念两句诗</h1>
-    <p id="poem">
-    叙别梦、扬州一觉。</p>
-    <p id="info">
-    【宋代】吴文英《夜游宫·人去西楼雁杳》</p>
-  </div>
-</div>
+      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+<div class="pattern-center-blank"></div>
 
-      <!-- .entry-content -->
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/ckpybcents/blog-image-bed@main/blog/img/bk2.jpg);" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/ckpybcents/blog-image-bed@main/blog/img/bk2.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      leetcode 算法练习</h1>
+      <p class="entry-census">
+        <span>
+          <a href="ckpybcents.github.io">
+            <img src="https://cdn.jsdelivr.net/gh/ckpybcents/blog-image-bed@main/blog/img/head1.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="ckpybcents.github.io">bcents</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2021-5-18<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
+<div id="content" class="site-content">
+  <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <div class="toc"></div>
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+        <div class="entry-content">
+          <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><ul>
+<li>求 1+2+…+n ，要求不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）。<a href="https://leetcode-cn.com/problems/qiu-12n-lcof/submissions/" target="_blank" rel="noopener">求1+2+…+n</a>.</li>
+</ul>
+<p><strong>示例</strong></p>
+<pre><code>输入: n = 3
+输出: 6
+</code></pre><p><strong>解题</strong></p>
+<pre><code>int sumNums(int n){
+    n&amp;&amp;(n+=sumNums(n-1));
+    return n;
+}
+</code></pre><p><strong>思路</strong>：以逻辑运算符 &amp;&amp; 为例，对于 A &amp;&amp; B 这个表达式，如果 A 表达式返回False ，那么 A &amp;&amp; B 已经确定为False ，此时不会去执行表达式 B。同理，对于逻辑运算符 ||， 对于 A || B 这个表达式，如果 A 表达式返回True ，那么 A || B 已经确定为True ，此时不会去执行表达式 B。</p>
+<p><strong>感想</strong>：这个思路太好了，用递归从最高位减下去，然后用与运算符代替</p>
+<ul>
+<li>TinyURL是一种URL简化服务， 比如：当你输入一个URL <a href="https://leetcode.com/problems/design-tinyurl" target="_blank" rel="noopener">https://leetcode.com/problems/design-tinyurl</a> 时，它将返回一个简化的URL <a href="http://tinyurl.com/4e9iAk" target="_blank" rel="noopener">http://tinyurl.com/4e9iAk</a>.<br>要求：设计一个 TinyURL 的加密 encode 和解密 decode 的方法。你的加密和解密算法如何设计和运作是没有限制的，你只需要保证一个URL可以被加密成一个TinyURL，并且这个TinyURL可以用解密方法恢复成原本的URL。 <a href="https://leetcode-cn.com/problems/encode-and-decode-tinyurl/" target="_blank" rel="noopener">TinyURL 的加密与解密</a>.</li>
+</ul>
+<p><strong>解题</strong></p>
+<pre><code>char* encode(char* longUrl) {
+    return longUrl;
+}
+char* decode(char* shortUrl) {
+    return shortUrl;
+}
+</code></pre><p><strong>感想</strong>：妈的笑死我，最好的加密就是不加密，当然不能这样写辣；</p>
+<pre><code>unsigned char key = 0x5a;
+char* encode(char* longUrl) {
+    char* temp = longUrl;
+    while (longUrl != NULL){
+        *longUrl ^= key;
+        longUrl++;
+    }
+    return temp;
+}
+
+char* decode(char* shortUrl) {
+    char* temp = shortUrl;
+    while (shortUrl != NULL){
+        *shortUrl ^= key;
+        shortUrl++;
+    }
+    return temp;
+}
+</code></pre><p><strong>思路</strong>：一个数经过两次异或之后等于原数。<a href="https://www.cnblogs.com/fusiwei/p/11384756.html" target="_blank" rel="noopener">常用的位运算</a>.<br><strong>笔记</strong>：1、本质区别</p>
+<p>双引号里面的是字符串， 而单引号里面的代表字符。</p>
+<p>2、输出区别</p>
+<p>str = “a”输出的就是a这个字母；</p>
+<p>str = ‘a’输出的测试65；</p>
+<ul>
+<li>编写一个函数，不用临时变量，直接交换numbers = [a, b]中a与b的值。<a href="https://leetcode-cn.com/problems/swap-numbers-lcci/" target="_blank" rel="noopener">交换数字</a>.</li>
+</ul>
+<p><strong>示例</strong></p>
+<pre><code>输入: numbers = [1,2]
+输出: [2,1]
+</code></pre><p><strong>解题</strong></p>
+<pre><code>int* swapNumbers(int* numbers, int numbersSize, int* returnSize){
+    numbers[0] ^= numbers[1];
+    numbers[1] ^= numbers[0];
+    numbers[0] ^= numbers[1];
+    *returnSize = numbersSize;
+    return numbers;
+}
+</code></pre><p><strong>思路</strong>：平常的交换运算。<br><strong>笔记</strong>：<br>这道题遵循的原理是<br>一个数异或它本身再异或另一个数结果是另一个数<br>即：b == a ^ a ^ b<br>假设x = 1, y = 2我们要实现两个数的交换<br>用位运算的方法:x = x ^ x ^ y, y = y ^ y ^ x<br>注意看这两个表达式中公共的部分x ^ y，我们把它提取出来<br>令x = x ^ y<br>那么可以推出<br>y = y ^ x = y ^ x ^ y = x<br>x = x ^ y = x ^ y ^ x = y<br><a href="https://blog.csdn.net/weixin_45409986/article/details/96481509?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522162134569616780271554201%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&amp;request_id=162134569616780271554201&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v29-1-96481509.pc_search_result_cache&amp;utm_term=c%E8%AF%AD%E8%A8%80%E4%BA%A4%E6%8D%A2" target="_blank" rel="noopener">交换运算</a>.</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>今天的题都不是很难，但是思路都特别巧妙。</p>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏
+            <div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/ckpybcents/blog-image-bed@main/blog/img/zhifubaosq.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/ckpybcents/blog-image-bed@main/blog/img/wechatsq.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc" style="background: none;"></div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2021/05/18/图片/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://img-blog.csdnimg.cn/20210518230848775.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JjZW50cw==,size_16,color_FFFFFF,t_70#pic_center" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://img-blog.csdnimg.cn/20210518230848775.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JjZW50cw==,size_16,color_FFFFFF,t_70#pic_center">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                </h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2021/05/18/好耶/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/ckpybcents/blog-image-bed@main/blog/img/bk1.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/ckpybcents/blog-image-bed@main/blog/img/bk1.jpg">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                好耶</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
       
 <div id="vcomments"></div>
 <script>
@@ -373,43 +505,25 @@
   }
 </script>
 
-      <div class="single-reward">
-        <div class="reward-open">赏
-          <div class="reward-main">
-            <ul class="reward-row">
-              <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/ckpybcents/blog-image-bed@main/blog/img/zhifubaosq.jpg"></li>
-              <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/ckpybcents/blog-image-bed@main/blog/img/wechatsq.jpg"></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-      <footer class="post-footer">
-        <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-        <div class="post-tags">
-        </div>
-        <div class="post-share">
-          <div class="social-share sharehidden share-component"></div>
-          <i class="iconfont show-share icon-forward"></i>
-        </div>
-      </footer><!-- .entry-footer -->
-    </article>
-      <!-- #post-## -->
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
-          <a href="/about/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/ckpybcents/blog-image-bed@main/blog/img/head1.jpg" itemprop="image" alt="Otaku" height="70" width="70"></a>
+          <a href="ckpybcents.github.io" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/ckpybcents/blog-image-bed@main/blog/img/head1.jpg" itemprop="image" alt="bcents" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
-            <a href="https://ckpybcents.github.io" itemprop="url" rel="author">Otaku</a>
+            <a href="ckpybcents.github.io" itemprop="url" rel="author">bcents</a>
             </h3>
           </div>
         </div>
         <hr>
-        <p><i class="iconfont icon-write"></i>努力做个平凡的人！</p>
+        <p><i class="iconfont icon-write"></i>bcents</p>
       </section>
+    </main><!-- #main -->
   </div><!-- #primary -->
 </div>
+
+
+
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>
